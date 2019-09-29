@@ -43,10 +43,10 @@ void histogram(PGraphics pg)
     // Convert the histogram value to a location between
     // the bottom and the top of the picture
     int y = int(map(hist[which], 0, histMax, pg.height, 0));
-    if (which == min)
+    if (which == min || which == min+1)
     {
       pg.stroke(200, 100, 50);
-    } else if (which == max)
+    } else if (which == max || which == max+1)
     {
       pg.stroke(50, 100, 200);
     } else
@@ -59,8 +59,8 @@ void histogram(PGraphics pg)
 
 void dibujar(PImage img, PImage img2, PGraphics pg) {
   //pg.filter(GRAY);
-  img2 = loadImage("imagen.jpg");
-  img2.resize(400, 400);
+  /*img2 = loadImage("imagen.jpg");
+  img2.resize(400, 400);*/
   img.loadPixels();
 
   for (int i = 0; i < img.width * img.height; i++) {
@@ -83,7 +83,7 @@ void dibujar(PImage img, PImage img2, PGraphics pg) {
       img2.pixels[i] = color(0);
     }
   }
-  
+  img2.updatePixels();
   pg.image(img2, 0, 0);
 }
 
