@@ -38,8 +38,18 @@ Completar la tabla:
 
 ## Discusión
 
-(describa brevemente las actividades realizadas y los resultados obtenidos)
+Evidenciamos que con el metodo luma para escalas de grises se aprecia mas el brillo de las imagenes y el contraste es mas suave, los detalles de la imagen se ven como en la imagen original.
+
+Al implementar las mascaras se forma un borde al rededor de la imagen, como posibles soluciones para esto encontramos:
+- Extender los pixeles del borde en cada direccion.
+- Repetir la imagen en cada direccion.
+
+*Estas posibles soluciones no fueron implementadas en esta entrega.
 
 ## Entrega
 
-* Plazo para hacer _push_ del repositorio a github: 29/9/19 a las 24h.
+* Instrucciones:
+
+En los archivos Taller_1 y rgb_luma para cambiar el metodo de escalas de grises entre RGB y HSB es necesario descomentarear el que desea usar y comentarear el otro.
+
+En los archivos mascaras y videoMascaras para escoger la mascara o kernel debe cambiar el nombre del kernel en la linea donde se indica con el texto "CHANGE HERE WITH KERNEL TO APPLY"
