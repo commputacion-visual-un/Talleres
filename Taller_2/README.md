@@ -16,7 +16,9 @@ Complete la tabla:
 
 | Integrante | github nick |
 |------------|-------------|
-|            |             |
+|  Joaquim Estopinan  | estopinj    |
+|  Paula Caballero  | pycaballrom    |
+|  Juan camilo Gallego  | jcgallegor    |
 
 ## Discusión
 
