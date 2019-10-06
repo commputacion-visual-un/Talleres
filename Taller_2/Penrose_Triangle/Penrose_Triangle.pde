@@ -1,8 +1,15 @@
 float cst;
-
+color red  = color(256,0,0);
+color blue = color(0,0,256);
+color green= color(0,256,0);
+color c1, c2, c3;
 void setup() {
   size(600, 600);
   cst = sqrt(3)/2;
+  c1 = red;
+  c2 = blue;
+  c3 = green;
+  
 }
 
 void draw() {
@@ -32,28 +39,35 @@ void draw() {
   
   strokeWeight(3);
   stroke(0);
-  fill(256,0,0);               // Red
+  fill(c1);                   // Red
   quad(350., 350., 350. +dec, 350., 300. -0.5*dec, 350- cst*100. -cst*dec -2*dec*cst, 300. -0.5*dec, 350- cst*100. -cst*dec);
   quad(300. -0.5*dec, 350- cst*100. -cst*dec -2*dec*cst, 300. -0.5*dec, 350- cst*100. -cst*dec, 250. -2*dec, 350. +2*cst*dec, 250. -(5./2)*dec, 350. +cst*dec);
-  stroke(256,0,0);
+  stroke(c1);
   line(300. -0.5*dec, 350- cst*100. -cst*dec -2*dec*cst +6, 300. -0.5*dec, 350- cst*100. -cst*dec);
   
   strokeWeight(3);
   stroke(0);
-  fill(0,0,256);               // Blue
+  fill(c2);               // Blue
   quad(300., 350- cst*100., 300. -0.5*dec, 350- cst*100. -cst*dec, 250. -2*dec, 350. +2*cst*dec, 250. -0.5*dec, 350. +cst*dec);
   quad(250. -2*dec, 350. +2*cst*dec, 250. -0.5*dec, 350. +cst*dec, 350. +(5./2)*dec, 350. +cst*dec, 350. +2*dec, 350. +2*cst*dec);
-  stroke(0,0,256);
+  stroke(c2);
   strokeWeight(4);
   line(250. -2*dec +5, 350. +2*cst*dec -3, 250. -0.5*dec, 350. +cst*dec);
   
   strokeWeight(3);
   stroke(0);
-  fill(0,256,0);               // Green
+  fill(c3);               // Green
   quad(300. -0.5*dec, 350- cst*100. -cst*dec -2*dec*cst, 300. -0.5*dec +dec, 350- cst*100. -cst*dec -2*dec*cst, 350. +(5./2)*dec, 350. +cst*dec, 350. +dec, 350.);
   quad(350. +(5./2)*dec, 350. +cst*dec, 350. +dec, 350, 250., 350., 250. -0.5*dec, 350. +cst*dec);
-  stroke(0,256,0);
+  stroke(c3);
   strokeWeight(4.5);
   line(350. +dec +3, 350. +2, 350. +(5./2)*dec -7, 350. +cst*dec -4);
   
+}
+
+void mouseClicked(){
+  color tmp = c1;
+  c1 = c2;
+  c2 = c3;
+  c3 = tmp;
 }
