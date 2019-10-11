@@ -26,9 +26,9 @@ Complete la tabla:
 
 | Ilusión | Categoria | Referencia | Tipo de interactividad (si aplica) | URL código base (si aplica) |
 |---------|-----------|------------|------------------------------------|-----------------------------|
-|         |           |            |                                    |                             |
-|         |           |            |                                    |                             |
-|         |           |            |                                    |                             |
+|Cafe-Wall|Geometrical-Optical (or distorting|         |Lines horizontally move with the mouse     |  |
+|Penrose Triangle|Paradoxal|       |Change colors by clicking           |                             |
+|Stuart Anstis ilusion|Movement|   |Remove lines when clicking and maintaining|                             |
 |         |           |            |                                    |                             |
 |         |           |            |                                    |                             |
 |         |           |            |                                    |                             |
