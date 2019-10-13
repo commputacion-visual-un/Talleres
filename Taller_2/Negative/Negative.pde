@@ -18,13 +18,13 @@ void draw()
   textSize(25);
   image(img2,0,0);
   moment++;
-  if(moment > 25)
+  if(moment > 20)
   {
     image(img,0,0);
     fill(050,250,50);
     text("Esta imagen es a blanco y negro,",115,535);
     text("¿ve color en el pasto y los edificios?",110,560);
-    if(moment > 35)
+    if(moment > 30)
     {
       moment = 0;
     }
