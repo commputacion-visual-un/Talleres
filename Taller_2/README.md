@@ -24,14 +24,14 @@ Complete la tabla:
 
 1. Complete la tabla
 
-| Ilusión | Categoria | Referencia | Tipo de interactividad (si aplica) | URL código base (si aplica) |
-|---------|-----------|------------|------------------------------------|-----------------------------|
-|Cafe-Wall|Geometrical-Optical (or distorting|         |Lines horizontally move with the mouse     |  |
-|Penrose Triangle|Paradoxal|       |Change colors by clicking           |                             |
-|Stuart Anstis ilusion|Movement|   |Remove lines when clicking and maintaining|                             |
-|         |           |            |                                    |                             |
-|         |           |            |                                    |                             |
-|         |           |            |                                    |                             |
+| Ilusión             | Categoria                        | Referencia | Tipo de interactividad (si aplica)        | URL código base (si aplica) |
+|---------------------|----------------------------------|------------|-------------------------------------------|-----------------------------|
+|Cafe-Wall            |Geometrical-Optical (or distorting|            |Lines horizontally move with the mouse     |                             |
+|Penrose Triangle     |Paradoxal                         |            |Change colors by clicking                  |                             |
+|Stuart Anstis ilusion|Movement                          |            |Remove lines when clicking and maintaining |                             |
+|Negative             |Color                             |            |Change image negative to gray after seconds|                             |
+|                     |                                  |            |                                           |                             |
+|                     |                                  |            |                                           |                             |
 
 2. Describa brevememente las referencias estudiadas y los posibles temas en los que le gustaría profundizar
 
