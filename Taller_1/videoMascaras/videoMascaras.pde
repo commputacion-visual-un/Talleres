@@ -84,7 +84,7 @@ void videoKernel(PGraphics pg, Movie movie){
 
 void draw() {
   pg.beginDraw();
-  pg.image(movie, 0, 0,400,400);  
+  pg.image(movie, 0, 0,400,400);
   pg.endDraw();
   
   pg1.beginDraw();
@@ -93,6 +93,7 @@ void draw() {
   
   image(pg, 15, 15);
   image(pg1, 425, 15);
+  println(frameRate);
 }
 
 // Called every time a new frame is available to read
