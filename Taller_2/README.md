@@ -31,7 +31,11 @@ Complete la tabla:
 |Penrose Triangle     |Paradoxal                         |            |Change colors by clicking                  |                             |
 |Stuart Anstis ilusion|Movement                          |            |Remove lines when clicking and maintaining |                             |
 |Negative             |Color                             |            |Change image negative to gray after seconds|                             |
+|Ebbinghaus illusion             |Others                          |            |Click to vanish the surrounding circles                                      |                             |
 |Kinegram             |Movement                          |            |---                                        |                             |
+|Muller-Lyer             |Geometrical-Optical                          |            |---                                        |                             |
+|Kanizsa triangle and square             |Fictions                          |            |---                                        |                             |
+
 
 2. Describa brevememente las referencias estudiadas y los posibles temas en los que le gustaría profundizar
 
