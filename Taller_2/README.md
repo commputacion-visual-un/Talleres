@@ -39,6 +39,9 @@ Complete la tabla:
 
 2. Describa brevememente las referencias estudiadas y los posibles temas en los que le gustaría profundizar
 
+https://www.openprocessing.org/sketch/452004
+http://www.openprocessing.org/sketch/26605
+
 ## Entrega
 
 * Plazo para hacer _push_ del repositorio a github: ~~6/10/19~~ 14/10/19 a las 24h.
