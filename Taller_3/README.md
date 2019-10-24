@@ -17,7 +17,7 @@ Referencias:
 * [The barycentric conspiracy](https://fgiesen.wordpress.com/2013/02/06/the-barycentric-conspirac/)
 * [Rasterization stage](https://www.scratchapixel.com/lessons/3d-basic-rendering/rasterization-practical-implementation/rasterization-stage)
 
-Implemente la función ```triangleRaster()``` del sketch adjunto para tal efecto, requiere la librería [nub](https://github.com/visualcomputing/nub/releases).
+Implemente la función ```triangleRaster()``` del sketch adjunto para tal efecto, requiere la librería [nub](https://github.com/visualcomputing/nub/releases) (versión >= 0.2).
 
 ## Integrantes
 
@@ -33,4 +33,4 @@ Describa los resultados obtenidos. En el caso de anti-aliasing describir las té
 
 ## Entrega
 
-* Plazo: 20/10/19 a las 24h.
+* Plazo: ~~20/10/19~~ 27/10/19 a las 24h.
