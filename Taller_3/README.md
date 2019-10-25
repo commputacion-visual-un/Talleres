@@ -33,6 +33,9 @@ Complete la tabla:
 
 Describa los resultados obtenidos. En el caso de anti-aliasing describir las técnicas exploradas, citando las referencias.
 
+- Quite slow to rasterize but the research have already been reduce to the smallest square containing the random triangle.
+- Rasterization principle de https://www.scratchapixel.com/lessons/3d-basic-rendering/rasterization-practical-implementation/rasterization-stage
+
 ## Entrega
 
 * Plazo: ~~20/10/19~~ 27/10/19 a las 24h.
