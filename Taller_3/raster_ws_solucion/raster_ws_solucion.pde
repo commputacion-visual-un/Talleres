@@ -5,7 +5,7 @@ import nub.processing.*;
 // 1. Nub objects
 Scene scene;
 Node node;
-Vector v1, v2, v3;
+Vector v1, v2, v3, V;
 // timing
 TimingTask spinningTask;
 boolean yDirection;
@@ -13,9 +13,9 @@ boolean yDirection;
 int n = 4;
 
 // 2. Hints
-boolean triangleHint = true;
+boolean triangleHint = false;
 boolean gridHint = true;
-boolean debug = true;
+boolean debug = false;
 boolean shadeHint = false;
 
 // 3. Use FX2D, JAVA2D, P2D or P3D
@@ -24,18 +24,23 @@ String renderer = P2D;
 // 4. Window dimension
 int dim = 10;
 
+// 4. Variables declaration
+float w1, w2, w3;         // Edgefunction result 
+float Lx, Rx, Ty, By;     // Limits of the square in which is generated the random triangle
+float lda1, lda2, lda3;   // Barycentric coordinates
+
 void settings() {
   size(int(pow(2, dim)), int(pow(2, dim)), renderer);
 }
 
 void setup() {
+  frameRate(5);
   rectMode(CENTER);
   scene = new Scene(this);
   if (scene.is3D())
     scene.setType(Scene.Type.ORTHOGRAPHIC);
   scene.setRadius(width/2);
   scene.fit(1);
-
   // not really needed here but create a spinning task
   // just to illustrate some nub timing features. For
   // example, to see how 3D spinning from the horizon
@@ -59,6 +64,7 @@ void setup() {
 
   // init the triangle that's gonna be rasterized
   randomizeTriangle();
+  V = new Vector();
 }
 
 void draw() {
@@ -77,25 +83,52 @@ void draw() {
 // Implement this function to rasterize the triangle.
 // Coordinates are given in the node system which has a dimension of 2^n
 void triangleRaster() {
+  push();
+  Lx = min(round(node.location(v1).x()), round(node.location(v2).x()), round(node.location(v3).x()));
+  Rx = max(round(node.location(v1).x()), round(node.location(v2).x()), round(node.location(v3).x()));
+  Ty = max(round(node.location(v1).y()), round(node.location(v2).y()), round(node.location(v3).y()));
+  By = min(round(node.location(v1).y()), round(node.location(v2).y()), round(node.location(v3).y()));
+  Vector a = new Vector(round(node.location(v1).x()), round(node.location(v1).y()));
+  Vector b = new Vector(round(node.location(v2).x()), round(node.location(v2).y()));
+  Vector c = new Vector(round(node.location(v3).x()), round(node.location(v3).y()));
+  float area = E(a,b,c);
+  boolean clockwise = area>0;
+  
+  for (float i = Lx; i <=Rx ; i+=1/*width/(2*pow(2, 2*n))*/){      // Rasterization
+    for (float j = By; j <=Ty ; j+=1/*width/(2*pow(2, 2*n))*/){
+      V.set(i, j);
+      w1 = E(b,c,V);                                        // Edge function for each triangle edge 
+      w2 = E(c,a,V);
+      w3 = E(a,b,V);
+      
+      if ( (w1>=0 && w2>=0 && w3>=0)&&clockwise || (w1<=0 && w2<=0 && w3<=0)&&(!clockwise) ){ // Vector in the triangle
+        lda1 = w1/area;
+        lda2 = w2/area;
+        lda3 = w3/area;
+        noStroke();
+        fill(lda1*255, lda2*255, lda3*255);          // Color depending on the barycentric coordinates
+        float x = V.x();
+        float y = V.y();
+        square(x, y, 1);
+      }
+    }
+  } 
   // node.location converts points from world to node
   // here we convert v1 to illustrate the idea
   if (debug) {
     push();
     noStroke();
     fill(255, 0, 0, 125);
-    int x = round(node.location(v1).x());
-    int y = round(node.location(v1).y());
-    square(x, y, 1);
-    fill(0, 255, 0, 125);
-    square(round(node.location(v1).x()+1), round(node.location(v1).y()+1), 1);
-    fill(0, 0, 255, 125);
-    square(round(node.location(v1).x()-1), round(node.location(v1).y()-1), 1);
-    fill(125, 125, 0, 125);
-    square(round(node.location(v1).x())+1, round(node.location(v1).y())-1, 1);
-    fill(125, 0, 125, 125);
-    square(round(node.location(v1).x())-1, round(node.location(v1).y())+1, 1);
+    square(round(node.location(v1).x()), round(node.location(v1).y()), 1);
     pop();
   }
+  pop();
+}
+
+float E(Vector A, Vector B, Vector P){
+  // Returns the value for the edge function considering edge A-B CLOCKWISE for the point P
+  return ( (P.x()-A.x())*(B.y()-A.y()) - 
+           (P.y()-A.y())*(B.x()-A.x()) );
 }
 
 void randomizeTriangle() {
