@@ -17,6 +17,7 @@ boolean triangleHint = false;
 boolean gridHint = true;
 boolean debug = false;
 boolean shadeHint = false;
+boolean raster = true;
 
 // 3. Use FX2D, JAVA2D, P2D or P3D
 String renderer = P2D;
@@ -76,7 +77,8 @@ void draw() {
     drawTriangleHint();
   push();
   scene.applyTransformation(node);
-  triangleRaster();
+  if(raster)
+    triangleRaster();
   pop();
 }
 
@@ -186,6 +188,8 @@ void keyPressed() {
     shadeHint = !shadeHint;
   if (key == 'd')
     debug = !debug;
+  if (key == 'p')
+    raster = !raster;
   if (key == '+') {
     n = n < 7 ? n+1 : 2;
     node.setScaling(width/pow( 2, n));
